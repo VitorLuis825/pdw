@@ -1,0 +1,231 @@
+@import url("https://fonts.googleapis.com/css2?family=Reem+Kufi&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway&display=swap");
+header {
+  display: flex;
+  justify-content: space-between;
+  width: 90vw;
+  margin: 4vh auto;
+  align-items: center;
+}
+
+.nav-container {
+  width: 55%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav, .nav-active {
+  font-size: x-large;
+  display: inline-block;
+  text-decoration: underline;
+  color: black;
+}
+
+.nav-active {
+  font-weight: bolder;
+}
+
+.logo {
+  font-size: larger;
+  position: relative;
+}
+.logo img {
+  position: absolute;
+  max-height: 200%;
+  left: -25%;
+  top: -55%;
+  z-index: -1;
+}
+
+* {
+  font-family: Reem Kufi;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 2px 2px white;
+  border-radius: 10px;
+  background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar {
+  margin-right: 1vw;
+  width: 12px;
+  background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb {
+  box-shadow: inset 0 0 2px 2px white;
+  border-radius: 10px;
+  background-color: #555;
+}
+
+.title-container {
+  margin: 3vh 0 3vh 10vw;
+}
+
+.title {
+  font-size: 3.5rem;
+}
+
+.title-description {
+  font-size: 1.3rem;
+}
+
+.topof-scrolling {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  margin: 0 auto;
+  height: 6.7vh;
+}
+.topof-scrolling input {
+  margin: auto 0;
+  display: inline-block;
+  width: 25vw;
+  height: 62.3%;
+  line-height: 1rem;
+  padding: 3px;
+  background-color: #C4C4C4;
+  border-radius: 40px;
+  font-size: large;
+}
+.topof-scrolling input:focus {
+  outline: none;
+}
+
+.cart {
+  height: 100%;
+  position: absolute;
+  right: 12vw;
+}
+.cart img {
+  max-height: 100%;
+}
+.cart #trap-right, .cart #trap-left {
+  position: absolute;
+  height: 60%;
+  width: 250%;
+  z-index: -1;
+}
+.cart #trap-right {
+  left: 0%;
+}
+.cart #trap-left {
+  right: 0%;
+  bottom: 0;
+  transform: rotate(180deg);
+}
+.cart #trap-right-texto, .cart #trap-left-texto {
+  position: absolute;
+}
+.cart #trap-right-texto {
+  font-size: 20px;
+  left: 150%;
+  top: 4%;
+}
+.cart #trap-left-texto {
+  font-size: 17px;
+  right: 110%;
+  bottom: 4%;
+}
+
+.scrolling-container {
+  height: 55vh;
+  border: 2px solid black;
+  margin: 1vh auto;
+  position: relative;
+  z-index: 1;
+}
+.scrolling-container::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  background-color: white;
+  width: 40%;
+  left: 30%;
+  top: -1%;
+  height: 102%;
+  z-index: 2;
+}
+.scrolling-container::before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  background-color: white;
+  height: 40%;
+  top: 30%;
+  left: -1%;
+  width: 102%;
+  z-index: 2;
+}
+
+.scrolling-container, .topof-scrolling {
+  width: 85vw;
+}
+
+.scrolling {
+  padding: 3vh 0 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  max-height: 52vh;
+  overflow-y: scroll;
+  position: relative;
+  background-color: #dbdbdb;
+  z-index: 10;
+}
+
+.section-categoria {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  margin-bottom: 3vh;
+  position: relative;
+  width: 25.5vw;
+  height: 14.3258426966vw;
+}
+.section-categoria:hover .section-container, .section-categoria:hover .section-title {
+  z-index: 1;
+  background-color: #d1d1d1;
+}
+.section-categoria:hover .section-container img, .section-categoria:hover .section-title img {
+  filter: brightness(90%);
+}
+.section-categoria span {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+.section-title {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  position: relative;
+  top: 5%;
+  background-color: white;
+  border: 1px solid black;
+  font-size: 1.5rem;
+  font-family: Raleway;
+  text-align: center;
+  width: 55%;
+  height: 30%;
+}
+
+.section-container {
+  display: flex;
+  justify-content: space-evenly;
+  height: 70%;
+  width: 100%;
+  border: 1px solid black;
+  background-color: white;
+}
+.section-container img {
+  max-width: 30%;
+}
+
+/*# sourceMappingURL=index.css.map */
