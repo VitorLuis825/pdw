@@ -1,0 +1,224 @@
+@use "_header.scss";
+
+@import url('https://fonts.googleapis.com/css2?family=Reem+Kufi&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+@mixin tamanho($valor) {
+    width:$valor;
+    height:$valor / 1.78;
+}
+
+
+$fonte-primaria: Reem Kufi;
+$fonte-secundaria: Raleway;
+
+$cor-primaria: white;
+$cor-secundaria: #dbdbdb;
+$cor-borda: black;
+
+*{
+    font-family: $fonte-primaria;
+}
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 2px 2px $cor-primaria;
+
+    border-radius: 10px;
+    background-color: #F5F5F5;
+  }
+  
+::-webkit-scrollbar {
+    
+    margin-right: 1vw;
+    width: 12px;
+    background-color: #F5F5F5;
+  }
+
+::-webkit-scrollbar-thumb {
+    box-shadow: inset 0 0 2px 2px $cor-primaria;
+
+    border-radius: 10px;
+    background-color: #555;
+  }
+
+
+.title-container{
+    margin: 3vh 0 3vh 10vw;
+}
+.title{
+    font-size: 3.5rem;
+}
+.title-description{
+    font-size: 1.3rem;
+}
+
+.topof-scrolling{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    margin: 0 auto;
+    height: 6.7vh;
+
+    input{
+        margin: auto 0;
+        display: inline-block;
+        width: 25vw;
+        height: 62.3%;
+        line-height: 1rem;
+        padding: 3px;
+        background-color: #C4C4C4;
+        border-radius: 40px;
+
+        font-size: large;
+        &:focus{
+        outline: none;
+        }
+    }
+}
+.cart{
+    height: 100%;
+    position: absolute;
+    right: 12vw;
+    img{
+        max-height: 100%;
+    }
+    #trap-right,#trap-left{
+        position: absolute;
+        height: 60%;
+        width: 250%;
+        z-index: -1;      
+    }
+    #trap-right{
+        left: 0%;
+    }
+    #trap-left{
+        right: 0%;
+        bottom: 0;
+        transform: rotate(180deg);
+    }
+    #trap-right-texto,#trap-left-texto{
+        position: absolute;
+    } 
+    #trap-right-texto{
+        font-size: 20px;
+        left: 150%;
+        top: 4%;
+    }
+    #trap-left-texto{
+        font-size: 17px;
+        right: 110%;
+        bottom: 4%;
+    } 
+}
+
+
+.scrolling-container{
+    height: 55vh;
+    border: 2px solid $cor-borda;
+    margin: 1vh auto;
+
+
+    position: relative; // pra fazer o after se basear nele
+
+    z-index: 1;
+    &::after{
+        content: "";
+        display: inline-block;
+
+        position: absolute;
+
+        background-color: $cor-primaria;
+        width: 40%;
+        left: 30%;
+        top: -1%;
+        height: 102%;
+        z-index: 2;
+    }
+    &::before{
+        content: "";
+        display: inline-block;
+
+        position: absolute;
+
+        background-color: $cor-primaria;
+        height: 40%;
+        top: 30%;
+        left: -1%;
+        width: 102%;
+        z-index: 2;
+    }
+}
+.scrolling-container,.topof-scrolling{
+    width: 85vw;
+}
+.scrolling{
+    padding: 3vh 0 0 0;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+    max-height: 52vh; // eu nao faço ideia do pq eh 52 e nao 55 mas fazer oq
+
+    overflow-y: scroll;
+
+    position: relative;
+    background-color: $cor-secundaria;
+
+    
+
+    z-index: 10;
+}
+.section-categoria{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    margin-bottom: 3vh;
+    position: relative; // pro span se basear nele
+    @include tamanho(25.5vw);
+    &:hover{
+        .section-container,.section-title{
+            z-index: 1;
+            background-color: darken($cor-primaria,18%);
+            img{
+                filter: brightness(90%);
+            }
+        }
+    }
+    span{
+        position:absolute; 
+        width:100%;
+        height:100%;
+        top:0;
+        left: 0;
+
+        z-index: 2;    
+    }
+}
+.section-title{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+
+    position: relative;
+    top: 5%;
+    background-color:$cor-primaria;
+
+    border: 1px solid $cor-borda;
+    font-size: 1.5rem;
+    font-family: Raleway;
+    text-align: center;
+    width: 55%;
+    height: 30%;
+}
+.section-container{
+    display:flex ;
+    justify-content: space-evenly;
+
+    height: 70%;
+    width: 100%;
+    border: 1px solid $cor-borda;
+    background-color: $cor-primaria;
+    img{
+        max-width: 30%;
+    }
+}

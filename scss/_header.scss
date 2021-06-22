@@ -1,0 +1,36 @@
+header{
+    display: flex;
+    
+    justify-content: space-between;
+
+    width: 90vw;
+    margin: 4vh auto;
+    align-items: center;
+}
+.nav-container{
+    width: 55%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav{
+    font-size: x-large;
+    display: inline-block;
+    text-decoration: underline;
+    color: black
+}
+.nav-active{
+    @extend .nav;
+    font-weight:bolder;
+}
+.logo{
+    font-size: larger;
+    position: relative;
+    img{
+        position: absolute;
+        max-height: 200%;
+        left: -25%;
+        top: -55%;
+        z-index: -1;
+    }
+}
